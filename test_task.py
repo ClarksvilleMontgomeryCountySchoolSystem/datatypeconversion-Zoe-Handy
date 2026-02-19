@@ -18,6 +18,16 @@ def test_task1_num_printed(capsys):
     assert "25" in captured.out, "Expected '25' to be printed"
 
 
+def test_task1_num_appears(capsys):
+    """Task 1: Verify number 25 appears in output"""
+    if 'task1' in sys.modules:
+        del sys.modules['task1']
+    import task1
+    importlib.reload(task1)
+    captured = capsys.readouterr()
+    assert "25" in captured.out
+
+
 def test_task1_type_printed(capsys):
     """Task 1: Check that 'str' is printed"""
     if 'task1' in sys.modules:
@@ -28,6 +38,16 @@ def test_task1_type_printed(capsys):
     assert "str" in captured.out, "Expected 'str' to be printed"
 
 
+def test_task1_type_verification(capsys):
+    """Task 1: Verify type str is shown"""
+    if 'task1' in sys.modules:
+        del sys.modules['task1']
+    import task1
+    importlib.reload(task1)
+    captured = capsys.readouterr()
+    assert "str" in captured.out
+
+
 def test_task1_result_correct(capsys):
     """Task 1: Check that '250' is printed"""
     if 'task1' in sys.modules:
@@ -36,6 +56,16 @@ def test_task1_result_correct(capsys):
     importlib.reload(task1)
     captured = capsys.readouterr()
     assert "250" in captured.out, "Expected '250' to be printed"
+
+
+def test_task1_result_appears(capsys):
+    """Task 1: Verify result 250 appears in output"""
+    if 'task1' in sys.modules:
+        del sys.modules['task1']
+    import task1
+    importlib.reload(task1)
+    captured = capsys.readouterr()
+    assert "250" in captured.out
 
 
 # Task 2: Float Conversion Tests
@@ -49,6 +79,16 @@ def test_task2_price_printed(capsys):
     assert "19.99" in captured.out, "Expected '19.99' to be printed"
 
 
+def test_task2_price_appears(capsys):
+    """Task 2: Verify price 19.99 appears in output"""
+    if 'task2' in sys.modules:
+        del sys.modules['task2']
+    import task2
+    importlib.reload(task2)
+    captured = capsys.readouterr()
+    assert "19.99" in captured.out
+
+
 def test_task2_type_printed(capsys):
     """Task 2: Check that 'str' is printed"""
     if 'task2' in sys.modules:
@@ -59,6 +99,16 @@ def test_task2_type_printed(capsys):
     assert "str" in captured.out, "Expected 'str' to be printed"
 
 
+def test_task2_type_verification(capsys):
+    """Task 2: Verify type str is shown"""
+    if 'task2' in sys.modules:
+        del sys.modules['task2']
+    import task2
+    importlib.reload(task2)
+    captured = capsys.readouterr()
+    assert "str" in captured.out
+
+
 def test_task2_total_correct(capsys):
     """Task 2: Check that '24.99' is printed"""
     if 'task2' in sys.modules:
@@ -67,6 +117,16 @@ def test_task2_total_correct(capsys):
     importlib.reload(task2)
     captured = capsys.readouterr()
     assert "24.99" in captured.out, "Expected '24.99' to be printed"
+
+
+def test_task2_total_appears(capsys):
+    """Task 2: Verify total 24.99 appears in output"""
+    if 'task2' in sys.modules:
+        del sys.modules['task2']
+    import task2
+    importlib.reload(task2)
+    captured = capsys.readouterr()
+    assert "24.99" in captured.out
 
 
 # Task 3: Type Conversion Variable Tests
@@ -122,6 +182,20 @@ def test_task3_f_is_float():
     import task3
     importlib.reload(task3)
     assert isinstance(task3.f, float), "Variable 'f' should be a float"
+
+
+def test_task3_all_variables_exist():
+    """Task 3: Check that all required variables exist"""
+    if 'task3' in sys.modules:
+        del sys.modules['task3']
+    import task3
+    importlib.reload(task3)
+    assert hasattr(task3, 'a'), "Variable 'a' should exist"
+    assert hasattr(task3, 'b'), "Variable 'b' should exist"
+    assert hasattr(task3, 'c'), "Variable 'c' should exist"
+    assert hasattr(task3, 'd'), "Variable 'd' should exist"
+    assert hasattr(task3, 'e'), "Variable 'e' should exist"
+    assert hasattr(task3, 'f'), "Variable 'f' should exist"
 
 
 # Task 4: Boolean Challenge (Extra Credit)
